@@ -1,0 +1,13 @@
+# Running
+cd /home/ld/BigDataCup/
+conda activate bigdata
+nohup streamlit run Overview.py --server.enableXsrfProtection false > /dev/null 2>&1 &
+
+# Mount to server
+cd /home/ld/frp_0.39.0_linux_amd64/
+nohup ./frpc -c ./frpc.ini > /dev/null 2>&1 &
+# http://ddns.lovefxyo.eu.org:8501/
+
+
+# database with table 'leaderboard' and 'teamsForCup'
+# sqlite3 bigdatacup.db
